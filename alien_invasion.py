@@ -101,7 +101,11 @@ class AlienInvasion:
        	elif event.key == pygame.K_DOWN:
        		self.ship.moving_down = True
         elif event.key == pygame.K_q:
-            sys.exit()
+        	filename = 'highscore.txt'
+        	high_score_txt = str(self.stats.high_score)
+        	with open(filename, 'w') as file_object:
+        		file_object.write(high_score_txt)
+        	sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
 

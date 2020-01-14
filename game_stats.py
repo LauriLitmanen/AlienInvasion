@@ -11,6 +11,12 @@ class GameStats:
 
 		# High score should never be reset
 		self.high_score = 0
+
+		filename = 'highscore.txt'
+		with open (filename, 'r') as file_object:
+			self.high_score = file_object.read()
+
+		self.high_score = int(self.high_score)
 		
 
 	def reset_stats(self):
