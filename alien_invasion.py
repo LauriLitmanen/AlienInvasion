@@ -56,6 +56,10 @@ class AlienInvasion:
         """Respond to keypresses and mouse events."""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
+                filename = 'highscore.txt'
+                high_score_txt = str(self.stats.high_score)
+                with open(filename, 'w') as file_object:
+                    file_object.write(high_score_txt)
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 self._check_keydown_events(event)
